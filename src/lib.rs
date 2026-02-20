@@ -29,6 +29,7 @@ mod nia;
 mod pfa;
 mod uda;
 mod ifa;
+mod bifa;
 
 pub use cfa::{CfaWrapper, CollectibleFungibleAsset, CFA_SCHEMA_ID};
 pub use ifa::{IfaWrapper, InflatableFungibleAsset, IFA_SCHEMA_ID};
@@ -52,17 +53,29 @@ pub const GS_PRECISION: GlobalStateType = GlobalStateType::with(3005);
 pub const GS_TERMS: GlobalStateType = GlobalStateType::with(2001);
 pub const GS_TOKENS: GlobalStateType = GlobalStateType::with(2102);
 pub const GS_PUBKEY: GlobalStateType = GlobalStateType::with(3006);
+pub const GS_EVM_CHAIN_ID: GlobalStateType = GlobalStateType::with(2020);
+pub const GS_EVM_CLAIM_MINT_CONTRACT: GlobalStateType = GlobalStateType::with(2021);
 
 pub const OS_ASSET: AssignmentType = AssignmentType::with(4000);
 pub const OS_INFLATION: AssignmentType = AssignmentType::with(4010);
 pub const OS_LINK: AssignmentType = AssignmentType::with(4013);
+pub const OS_CLAIM_BATON: AssignmentType = AssignmentType::with(4014);
 
 pub const TS_INFLATION: TransitionType = TransitionType::with(8000);
 pub const TS_BURN: TransitionType = TransitionType::with(8010);
 pub const TS_TRANSFER: TransitionType = TransitionType::with(10000);
 pub const TS_LINK: TransitionType = TransitionType::with(8012);
+pub const TS_GRANT_BATON: TransitionType = TransitionType::with(8013);
+pub const TS_CLAIM_MINT: TransitionType = TransitionType::with(8014);
 
 pub const MS_ALLOWED_INFLATION: MetaType = MetaType::with(1000);
+pub const MS_CLAIM_AMOUNT: MetaType = MetaType::with(1001);
+pub const MS_CLAIM_CHAIN_ID: MetaType = MetaType::with(1002);
+pub const MS_CLAIM_CONTRACT: MetaType = MetaType::with(1003);
+pub const MS_CLAIM_EVENT_LOG_INDEX: MetaType = MetaType::with(1004);
+pub const MS_CLAIM_EVENT_TX_HASH: MetaType = MetaType::with(1005);
+pub const MS_CLAIM_NULLIFIER: MetaType = MetaType::with(1006);
+pub const MS_CLAIM_PROOF: MetaType = MetaType::with(1007);
 
 pub const ERRNO_NON_EQUAL_IN_OUT: u8 = 0;
 pub const ERRNO_ISSUED_MISMATCH: u8 = 1;
